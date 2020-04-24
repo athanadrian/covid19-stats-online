@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
+import CountUp from 'react-countup';
 import { useCardsStyles } from '../../styles';
 import cx from 'classnames';
 //import classes from './Cards.module.css';
@@ -23,7 +24,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary" gutterBottom>
               Κρούσματα
             </Typography>
-            <Typography variant="h5">{confirmed.value}</Typography>
+            <Typography variant="h5">
+              <CountUp start={0} end={confirmed.value} duration={2.75} separator="," />
+            </Typography>
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
@@ -41,7 +44,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary" gutterBottom>
               Αναρρώσεις
             </Typography>
-            <Typography variant="h5">{recovered.value}</Typography>
+            <Typography variant="h5">
+              <CountUp start={0} end={recovered.value} duration={2.75} separator="," />
+            </Typography>
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>
@@ -59,7 +64,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography color="textSecondary" gutterBottom>
               Θάνατοι
             </Typography>
-            <Typography variant="h5">{deaths.value}</Typography>
+            <Typography variant="h5">
+              <CountUp start={0} end={deaths.value} duration={2.75} separator="," />
+            </Typography>
             <Typography color="textSecondary">
               {new Date(lastUpdate).toDateString()}
             </Typography>

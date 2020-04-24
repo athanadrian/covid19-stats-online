@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       <footer className={classes.container}>
-        <Typography component="p" align="rightleft">
+        <Typography component="p" align="right">
           Copyright © {new Date().getFullYear()}.{' '}
           <a href="https://atana.site" className={classes.link}>
             AtanaDev
